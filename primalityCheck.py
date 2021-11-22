@@ -40,7 +40,7 @@ def isPrime(n, k) -> bool:
     for _ in range(k):
         a = randint(2, n - 1)
         x = pow(a, s, n)
-        if x == 1 or x == n - 1:
+        if x in (1, n - 1):
             continue
         for _ in range(r - 1):
             x = pow(x, 2, n)

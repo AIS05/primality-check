@@ -8,7 +8,7 @@ acc = 7
 def isPrime(n, k) -> bool:
     """
     This function checks if a number is prime or not.
-    It uses Miller Rabin Primality Test. 
+    It uses Miller Rabin Primality Test.
     https://en.wikipedia.org/wiki/Miller–Rabin_primality_test
 
     It is very efficient so it is suitable for checking
@@ -31,10 +31,12 @@ def isPrime(n, k) -> bool:
         return True
     elif n == 1 or n % 2 == 0:
         return False
+
     r, s = 0, n - 1
     while s % 2 == 0:
         r += 1
         s //= 2
+
     for _ in range(k):
         a = randint(2, n - 1)
         x = pow(a, s, n)
